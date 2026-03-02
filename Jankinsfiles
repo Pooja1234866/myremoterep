@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Fecth file') {
+            steps {
+                git 'https://github.com/Pooja1234866/myremoterep.git'
+            }
+        }
+        stage('build'){
+            steps{
+                echo 'building project'
+                bat 'javac program1'
+            }
+        }
+        stage ('Executing'){
+            steps{
+                echo 'Executing program'
+               
+            }
+        }
+    }
+    post{
+        success{
+            echo 'pipeline Executed Successfully'
+        }
+        failure{
+            echo 'pipeline feiled'
+        }
+    }
+}
