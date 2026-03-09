@@ -3,7 +3,7 @@ agent any
 stages{
 stagee9('checkout'){
 steps{
-git'https://github.com/Pooja1234866/myremoterep'
+git'https://github.com/Pooja1234866/myremoterep.git'
 }
 }
 stage('publish){
