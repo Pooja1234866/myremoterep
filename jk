@@ -1,0 +1,22 @@
+pipeline{
+agent any
+stages{
+stagee9('checkout'){
+steps{
+git'https://github.com/Pooja1234866/myremoterep'
+}
+}
+stage('publish){
+STEPS{
+publishHTML([
+allowmissing:true,
+alwaysLinktoLastBuild:false,
+keepAll:false,
+reportDir:'.',
+reportFiles:'serverhtml.html',
+reportName:'MY HTML PAGE'
+])
+}
+}
+}
+}
